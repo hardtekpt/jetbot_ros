@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 import rospy
-import time
 import math
-
 from geometry_msgs.msg import Twist
-
 import qwiic_scmd
+
 
 motors = qwiic_scmd.QwiicScmd()
 
@@ -49,9 +47,9 @@ if __name__ == '__main__':
 	rospy.loginfo("Motor connection status " + str(motors.connected))
 
 	motors.begin()
-	time.sleep(.250)
+	rospy.sleep(.250)
 	motors.enable()
-	time.sleep(.250)
+	rospy.sleep(.250)
 
 	# stop the motors as precaution
 	stop()
