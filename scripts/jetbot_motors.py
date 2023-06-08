@@ -20,10 +20,10 @@ def set_speed(left, right):
     motors.set_drive(0, 0, int(left * max_pwm))
     motors.set_drive(1, 0, int(right * max_pwm))
         
-def stop(self):
+def stop():
     set_speed(0,0)
 		
-def twist_listener(self, msg):
+def twist_listener(msg):
 
     x = msg.linear.x
     rot = msg.angular.z
@@ -38,7 +38,6 @@ def twist_listener(self, msg):
     left = max(min(left, max_speed), -max_speed) / max_speed
     right = max(min(right, max_speed), -max_speed) / max_speed
     
-    rospy.loginfo(f"x={x:.03f} rotation={rot:.03f} -> left={left:.03f} right={right:.03f}  (max_speed={max_speed:.03f} m/s)")
     set_speed(left, right)
 
 
