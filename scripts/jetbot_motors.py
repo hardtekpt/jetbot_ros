@@ -42,23 +42,25 @@ def twist_listener(msg):
 # initialization
 if __name__ == '__main__':
 	
-	rospy.init_node('jetbot_motors')
+    rospy.init_node('jetbot_motors')
 
-	rospy.loginfo("Motor connection status " + str(motors.connected))
+    rospy.loginfo("Motor connection status " + str(motors.connected))
 
-	motors.begin()
-	rospy.sleep(.250)
-	motors.enable()
-	rospy.sleep(.250)
+    motors.begin()
+    rospy.sleep(.250)
+    motors.enable()
+    rospy.sleep(.250)
 
-	# stop the motors as precaution
-	stop()
+    # stop the motors as precaution
+    stop()
 
-	# setup ros node	
-	rospy.Subscriber('~cmd_vel', Twist, twist_listener)
+    # setup ros node	
+    rospy.Subscriber('~cmd_vel', Twist, twist_listener)
 
-	# start running
-	rospy.spin()
-
-	# stop motors before exiting
-	stop()
+    # start running
+    rospy.spin()
+        
+    # stop motors before exiting
+    stop()
+    motors.disable()
+    
