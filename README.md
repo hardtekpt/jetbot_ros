@@ -4,7 +4,7 @@ This repository contains a **ROS** package made to run on a jetbot that exposes 
 
 ## Setup
 
-This package was tested on **JetPack 4.6.1** with **L4T 32.7.1** running on an NVIDIA Jetson Nano (4Gb) with the **sparkfun qwiic pHat** and the **LI-IMX219-MIPI-FF-NANO-H136** camera. ROS melodic was installed using [this](https://github.com/jetsonhacks/installROS) convenience script.
+This package was tested on **JetPack 4.6.1** with **L4T 32.7.1** running on an NVIDIA Jetson Nano (4Gb) with the **sparkfun qwiic pHat** and the **LI-IMX219-MIPI-FF-NANO-H136** camera ([sparkfun jetbot](https://www.sparkfun.com/products/18486)). ROS melodic was installed using [this](https://github.com/jetsonhacks/installROS) convenience script.
 
 ### Camera Dependencies
 
