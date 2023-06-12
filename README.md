@@ -36,11 +36,20 @@ sudo apt-get install -y --no-install-recommends \
 
 ### Download and install
 
+Clone the repository into the workspace and build it
+
 ```bash
 cd ~/catkin_ws/src
 git clone https://github.com/hardtekpt/jetbot_ros
 cd ~/catkin_ws
 catkin_make
+```
+
+Install the motor and OLED screen drivers
+
+```bash
+sudo python2 -m pip install sparkfun-qwiic-i2c sparkfun-qwiic-oled-base
+sudo python2 -m pip install sparkfun-qwiic-scmd sparkfun-qwiic-micro-oled
 ```
 
 ### Usage
