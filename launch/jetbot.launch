@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-    <arg name="name" value="jetbot" />
+    <arg name="name" default="jetbot" />
 
     <group ns="$(arg name)">    
         <node name="jetbot_motors" pkg="jetbot_ros" type="jetbot_motors.py" output="screen" respawn="true"/>
