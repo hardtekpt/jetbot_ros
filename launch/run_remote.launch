@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<launch>
-    <env name="ROS_MASTER_URI" value="http://192.168.1.95:11311"/>
-
-    <node name="jetbot_motors" pkg="jetbot_ros" type="jetbot_motors.py" output="screen" respawn="true"/>
-</launch>

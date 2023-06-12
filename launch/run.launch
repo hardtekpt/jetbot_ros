@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <node name="jetbot_motors" pkg="jetbot_ros" type="jetbot_motors.py" output="screen" respawn="true"/>
+
+    <node name="jetbot_screen" pkg="jetbot_ros" type="jetbot_screen.py" output="screen" respawn="true"/>
+
+    <include file="$(find jetson_nano_cuda_csi_cam)/launch/jetson_csi_cam.launch">
+        <arg name="sensor_id" value="0"/>
+        <arg name="width" value="640" />
+        <arg name="height" value="480" />
+        <arg name="fps" value="20" />
+    </include>
+
+</launch>
