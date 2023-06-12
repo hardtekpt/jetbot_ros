@@ -55,7 +55,9 @@ if __name__ == '__main__':
     stop()
 
     # setup ros node	
-    rospy.Subscriber('~cmd_vel', Twist, twist_listener)
+    ns = rospy.get_namespace()
+    rospy.Subscriber(ns+'cmd_vel', Twist, twist_listener)
+
 
     # start running
     rospy.spin()

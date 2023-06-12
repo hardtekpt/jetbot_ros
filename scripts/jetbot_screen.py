@@ -11,6 +11,7 @@ screen = qwiic_micro_oled.QwiicMicroOled()
 def printOLED(text):
     
 	screen.clear(screen.PAGE)
+	screen.set_cursor(0,0)
 	screen.print(text)
 	screen.display()
 
@@ -28,9 +29,15 @@ if __name__ == '__main__':
 	screen.begin()
 	screen.clear(screen.ALL)
 	screen.display()
+	rospy.sleep(2)
+	screen.clear(screen.PAGE)
+	screen.print("jetbot_ros")
+	screen.display()
+
 
 	# setup ros node	
-	rospy.Subscriber('~screen', String, screen_listener)
+	ns = rospy.get_namespace()
+	rospy.Subscriber(ns + 'screen', String, screen_listener)
 
 	# start running
 	rospy.spin()
