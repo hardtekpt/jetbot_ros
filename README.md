@@ -59,3 +59,11 @@ cd ~/catkin_ws/src
 source devel/setup.bash
 roslaunch jetbot_ros run.launch
 ```
+
+It is possible to control the jetbot via teleop by running in a new terminal:
+
+```bash
+cd ~/catkin_ws/src
+source devel/setup.bash
+roslaunch jetbot_ros teleop.launch
+```
