@@ -54,13 +54,15 @@ sudo python2 -m pip install sparkfun-qwiic-scmd sparkfun-qwiic-micro-oled
 
 ### Usage
 
+Two main launch files are available. The ```run.launch``` file can be used to launch the jetbot in either simulation or with the real vehicle:
+
 ```bash
 cd ~/catkin_ws/src
 source devel/setup.bash
-roslaunch jetbot_ros run.launch
+roslaunch jetbot_ros run.launch sim:=<true,false>
 ```
 
-It is possible to control the jetbot via teleop by running in a new terminal:
+Additionally, it is possible to control the jetbot via teleop by running in a new terminal:
 
 ```bash
 cd ~/catkin_ws/src
