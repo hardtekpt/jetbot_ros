@@ -62,10 +62,10 @@ source devel/setup.bash
 roslaunch jetbot_ros run.launch sim:=<true,false>
 ```
 
-Additionally, it is possible to control the jetbot via teleop by running in a new terminal:
+This launch file will make the motors, screen and camera available through ROS topics. To get more information use ```rostopic list``` and ```rostopic info```. Additionally, it is possible to control the jetbot via teleop by running in a new terminal:
 
 ```bash
 cd ~/catkin_ws/src
 source devel/setup.bash
-roslaunch jetbot_ros teleop.launch
+roslaunch jetbot_ros teleop.launch sim:=<true,false>
 ```
