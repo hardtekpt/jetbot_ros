@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<robot name="jetbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<robot name="$(arg model_name)" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 
 <!-- /////////////////////////////////////////////////////////////////-->

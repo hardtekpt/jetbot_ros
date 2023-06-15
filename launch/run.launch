@@ -2,23 +2,20 @@
 <launch>
 
     <arg name="name" default="jetbot"/>
-    <arg name="ID" default="0"/>
     <arg name="sim" default="true"/>
 
-    <include file="$(find jetbot_ros)/launch/jetbot.launch" unless="$(arg sim)">
-        <arg name="name" value="$(arg name)"/>
-        <arg name="ID" value="$(arg ID)"/>
-    </include>
+    <include file="$(find jetbot_ros)/launch/gazebo.launch" if="$(arg sim)"/>
 
-    <include file="$(find jetbot_ros)/launch/jetbot_sim.launch" if="$(arg sim)">
+    <include file="$(find jetbot_ros)/launch/single_vehicle.launch">
         <arg name="name" value="$(arg name)"/>
-        <arg name="ID" value="$(arg ID)"/>
+        <arg name="ID" value="0"/>
+        <arg name="sim" value="true"/>
         <arg name="x" value="0"/>
         <arg name="y" value="0"/>
         <arg name="z" value="0"/>
     </include>
 
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find jetbot_ros)/launch/cfg.rviz" if="$(arg sim)"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find jetbot_ros)/launch/cfg.rviz"/>
 
 </launch>
 
